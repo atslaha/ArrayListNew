@@ -34,6 +34,8 @@ public class ArrayListDemo {
 		System.out.println(mass1.size());
 		mass1.remove(3);
 		
+		//System.out.println();
+		System.out.println();
 		System.out.println(mass1.size()+" Last");
 		
 		System.out.println(  mass1.lenght() );
