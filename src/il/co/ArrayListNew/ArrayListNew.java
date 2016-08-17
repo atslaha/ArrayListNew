@@ -3,7 +3,10 @@ package il.co.ArrayListNew;
 import java.io.IOException;
 import java.util.*;
 
-public class ArrayListNew implements Container {
+import il.co.ArrayListNewExceptions.IllegalIndexException;
+import il.co.ArrayListNewExceptions.InitializationException;
+
+public class ArrayListNew<E> implements Container {
 	
 	
 	private Object[] mass;
@@ -13,18 +16,12 @@ public class ArrayListNew implements Container {
 		mass = new Object[10];
 	}
 	
-	public ArrayListNew(int capacity){
+	public ArrayListNew(int capacity) throws InitializationException{
 		
-			try {
-				if (capacity <0)
-				throw new Exception();
-			} catch (Exception e) {
-				
-				e.printStackTrace();
+			if (capacity <0){
+				throw new InitializationException();
 			}
 			mass = new Object[capacity];
-		
-		
 	}
 	
 	public Object get(int index){
@@ -34,7 +31,7 @@ public class ArrayListNew implements Container {
 	
 	private void checkIndex(int index) {
 		if (index<0 || index>=this.index){
-			throw new IllegalArgumentException();
+			throw new IllegalIndexException();
 		}
     }
 	
