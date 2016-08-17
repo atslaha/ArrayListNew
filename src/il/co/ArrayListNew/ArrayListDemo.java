@@ -5,6 +5,12 @@ package il.co.ArrayListNew;
 public class ArrayListDemo {
 
 	public static void main(String[] args) {
+		try {
+			throw new TestException("bla-bla-bla!", new TestException());
+		} catch (TestException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		ArrayListNew mass1 = new ArrayListNew(5);
 		System.out.println(mass1);
 		mass1.add("Hello World(0)!");
