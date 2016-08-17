@@ -1,16 +1,21 @@
 package il.co.ArrayListNew;
 
+import java.util.logging.Logger;
+
 //import il.co.ArrayListNew.ArrayListNew;;
 
 public class ArrayListDemo {
 
+	private final static Logger LOGGER = Logger.getLogger(Logger.class.getName()); 
 	public static void main(String[] args) {
+		LOGGER.info("Program has been started");
 		try {
 			throw new TestException("bla-bla-bla!", new TestException());
 		} catch (TestException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		ArrayListNew mass1 = new ArrayListNew(5);
 		System.out.println(mass1);
 		mass1.add("Hello World(0)!");
@@ -48,8 +53,9 @@ public class ArrayListDemo {
 		for(Iterator iter = mass1.getIterator(); iter.hasNext();){
 	         String name = (String)iter.next();
 	         System.out.println("Name : " + name);
-	      } 
-
+	    } 
+		LOGGER.warning("______________________________");
+		
 	}
 
 }

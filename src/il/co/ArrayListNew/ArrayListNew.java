@@ -18,7 +18,6 @@ public class ArrayListNew implements Container {
 				if (capacity <0)
 				throw new Exception();
 			} catch (Exception e) {
-				
 				e.printStackTrace();
 			}
 			mass = new Object[capacity];
