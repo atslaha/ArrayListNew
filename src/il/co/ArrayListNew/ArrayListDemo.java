@@ -8,6 +8,7 @@ public class ArrayListDemo {
 		ArrayListNew mass1 = new ArrayListNew(5);
 		System.out.println(mass1);
 		mass1.add("Hello World(0)!");
+		//mass1.add("Hello World(0)!");
 		
 		mass1.set(0, "Hey guys!(0)");
 		mass1.add("Hello  World!(1)");
