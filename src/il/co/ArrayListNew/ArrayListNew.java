@@ -7,10 +7,8 @@ public class ArrayListNew implements Container {
 	
 	
 	private Object[] mass;
-	private int size;
 	private int index;
-	private char[] length;
-	
+		
 	public ArrayListNew(){
 		mass = new Object[10];
 	}
@@ -51,7 +49,6 @@ public class ArrayListNew implements Container {
 		}
 			mass[index]=value;
 			index++;
-			size++;
 		}
 	
 	public boolean add(int indexx, Object value){
@@ -61,8 +58,6 @@ public class ArrayListNew implements Container {
 		System.arraycopy(mass, indexx, mass, indexx+1, index-indexx);
 		mass[indexx]=value;
 		index++;
-		size++;
-		
 		return true;
 	}
 	
@@ -72,7 +67,6 @@ public class ArrayListNew implements Container {
 		System.arraycopy(mass, indexx+1, mass, indexx, index - indexx-1);
 		mass[index-1]=null;
 		index--;
-		size--;
 		return true;
 	}
 	
@@ -83,7 +77,7 @@ public class ArrayListNew implements Container {
 	}
 	
 	public int size(){
-		return size;
+		return index;
 	}
 	
 	public int lenght(){
