@@ -9,11 +9,11 @@ import il.co.ArrayListNewExceptions.InitializationException;
 public class ArrayListNew<E> implements Container {
 	
 	
-	private Object[] mass;
+	private E[] mass;
 	private int index;
 		
 	public ArrayListNew(){
-		mass = new Object[10];
+		mass = (E[])new Object[10];
 	}
 	
 	public ArrayListNew(int capacity) throws InitializationException{
@@ -21,7 +21,7 @@ public class ArrayListNew<E> implements Container {
 			if (capacity <0){
 				throw new InitializationException();
 			}
-			mass = new Object[capacity];
+			mass = (E[]) new Object[capacity];
 	}
 	
 	public Object get(int index){
@@ -35,12 +35,12 @@ public class ArrayListNew<E> implements Container {
 		}
     }
 	
-	public void set(int index, Object value){
+	public void set(int index, E value){
 		checkIndex(index);
 		mass[index]=value;		
 	}
 
-	public void add(Object value){
+	public void add(E value){
 		if(index == mass.length){
 			growArray();
 		}
@@ -48,7 +48,7 @@ public class ArrayListNew<E> implements Container {
 			index++;
 		}
 	
-	public boolean add(int indexx, Object value){
+	public boolean add(int indexx, E value){
 		checkIndex(indexx);
 		if (index == mass.length)
 			growArray();
@@ -68,7 +68,7 @@ public class ArrayListNew<E> implements Container {
 	}
 	
 	public void growArray(){
-		Object[] newArray = new Object[mass.length * 2];
+		E[] newArray = (E[]) new Object[mass.length * 2];
 		System.arraycopy(mass, 0, newArray, 0, index );
 		mass = newArray;
 	}

@@ -5,7 +5,7 @@ package il.co.ArrayListNew;
 public class ArrayListDemo {
 
 	public static void main(String[] args) {
-		ArrayListNew mass1 = new ArrayListNew(5);
+		ArrayListNew<String> mass1 = new ArrayListNew<String>(5);
 		System.out.println(mass1);
 		mass1.add("Hello World(0)!");
 		//mass1.add("Hello World(0)!");
