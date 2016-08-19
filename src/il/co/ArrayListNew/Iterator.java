@@ -1,6 +1,6 @@
 package il.co.ArrayListNew;
 
-public interface Iterator {
+public interface Iterator<E> {
 	public boolean hasNext();
-	   public Object next();
+	   public E next();
 }

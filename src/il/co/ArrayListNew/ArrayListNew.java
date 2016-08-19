@@ -1,7 +1,8 @@
 package il.co.ArrayListNew;
 
 import java.io.IOException;
-import java.util.*;
+//import java.util.*;
+//import java.util.Iterator;
 
 import il.co.ArrayListNewExceptions.IllegalIndexException;
 import il.co.ArrayListNewExceptions.InitializationException;
@@ -24,7 +25,7 @@ public class ArrayListNew<E> implements Container {
 			mass = (E[]) new Object[capacity];
 	}
 	
-	public Object get(int index){
+	public E get(int index){
 		checkIndex(index);
 		return mass[index];
 	}
@@ -35,36 +36,37 @@ public class ArrayListNew<E> implements Container {
 		}
     }
 	
-	public void set(int index, E value){
+	public E set(int index, E value){
 		checkIndex(index);
-		mass[index]=value;		
+		mass[index]=value;
+		return null;
 	}
 
-	public void add(E value){
+	public boolean add(E value){
 		if(index == mass.length){
 			growArray();
 		}
 			mass[index]=value;
 			index++;
+			return true;
 		}
 	
-	public boolean add(int indexx, E value){
+	public void add(int indexx, E value){
 		checkIndex(indexx);
 		if (index == mass.length)
 			growArray();
 		System.arraycopy(mass, indexx, mass, indexx+1, index-indexx);
 		mass[indexx]=value;
 		index++;
-		return true;
 	}
 	
-	public boolean remove(int indexx){
+	public E remove(int indexx){
 		checkIndex(indexx);
 		
 		System.arraycopy(mass, indexx+1, mass, indexx, index - indexx-1);
 		mass[index-1]=null;
 		index--;
-		return true;
+		return null;
 	}
 	
 	public void growArray(){
@@ -83,12 +85,12 @@ public class ArrayListNew<E> implements Container {
 	}
 	
 	@Override
-	public Iterator getIterator() {
+	public Iterator<E> getIterator() {
 		 return new NameIterator();
 	}
 	
-		
-	private class NameIterator implements Iterator {
+
+	private class NameIterator<E> implements Iterator<E> {
 
 	      int index;
 
@@ -102,10 +104,10 @@ public class ArrayListNew<E> implements Container {
 	      }
 
 	      @Override
-	      public Object next() {
+	      public E next() {
 	      
 	         if(this.hasNext()){
-	            return mass[index++];
+	            return  (E) mass[index++];
 	         }
 	         else return null;
 	      }		

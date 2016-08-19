@@ -42,8 +42,20 @@ public class ArrayListDemo {
 		System.out.println(  mass1.lenght() );
 		mass1.add("Duckburg ()6");
 		
-		for(Iterator iter = mass1.getIterator(); iter.hasNext();){
+		for(Iterator<String> iter = mass1.getIterator(); iter.hasNext();){
 	         String name = (String)iter.next();
+	         System.out.println("Name : " + name);
+	      } 
+		System.out.println("-------------------------");
+//----------------------------------------------------------------------------------------
+		ArrayListNew<Integer> mass2 = new ArrayListNew<Integer>(5);
+		mass2.add(11);
+		mass2.add(22);
+		mass2.add(33);
+		mass2.add(44);
+		mass2.set(2, 333);
+		for(Iterator<Integer> iter = mass2.getIterator(); iter.hasNext();){
+	         Integer name = (Integer)iter.next();
 	         System.out.println("Name : " + name);
 	      } 
 

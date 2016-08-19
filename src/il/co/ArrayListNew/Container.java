@@ -1,5 +1,5 @@
 package il.co.ArrayListNew;
 
-public interface Container {
-	public Iterator getIterator();
+public interface Container<E> {
+	public Iterator<E> getIterator();
 }
