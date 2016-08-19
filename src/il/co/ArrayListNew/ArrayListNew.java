@@ -1,13 +1,13 @@
 package il.co.ArrayListNew;
 
 import java.io.IOException;
-//import java.util.*;
-//import java.util.Iterator;
+import java.util.*;
+import java.util.Iterator;
 
 import il.co.ArrayListNewExceptions.IllegalIndexException;
 import il.co.ArrayListNewExceptions.InitializationException;
 
-public class ArrayListNew<E> implements Container {
+public class ArrayListNew<E> implements List<E> {
 	
 	
 	private E[] mass;
@@ -84,11 +84,114 @@ public class ArrayListNew<E> implements Container {
 		return length;
 	}
 	
-	@Override
+	
 	public Iterator<E> getIterator() {
 		 return new NameIterator();
 	}
 	
+		
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean contains(Object o) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Iterator<E> iterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object[] toArray() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <T> T[] toArray(T[] a) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean remove(Object o) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean containsAll(Collection<?> c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean addAll(Collection<? extends E> c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean addAll(int index, Collection<? extends E> c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean removeAll(Collection<?> c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean retainAll(Collection<?> c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void clear() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int indexOf(Object o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int lastIndexOf(Object o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public ListIterator<E> listIterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ListIterator<E> listIterator(int index) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<E> subList(int fromIndex, int toIndex) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 	private class NameIterator<E> implements Iterator<E> {
 
@@ -112,5 +215,18 @@ public class ArrayListNew<E> implements Container {
 	         else return null;
 	      }		
 	   }
+
+//	@Override
+//	public Iterator<E> getIterator() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
+
+//	@Override
+//	public E remove(int index) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 }

@@ -1,6 +1,7 @@
 package il.co.ArrayListNew;
 
 //import il.co.ArrayListNew.ArrayListNew;;
+import java.util.Iterator;
 
 public class ArrayListDemo {
 
@@ -58,6 +59,12 @@ public class ArrayListDemo {
 	         Integer name = (Integer)iter.next();
 	         System.out.println("Name : " + name);
 	      } 
+		
+		System.out.println("-------------------------");
+		Iterator it = mass2.getIterator();
+		while (it.hasNext()){
+			System.out.println(it.next());
+		}
 
 	}
 
