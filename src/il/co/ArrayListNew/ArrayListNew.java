@@ -69,6 +69,22 @@ public class ArrayListNew<E> implements List<E> {
 		return null;
 	}
 	
+	
+	
+	@Override
+	public boolean remove(Object object) {
+		//object=(E)object;
+		for(int i=0;i<mass.length;i++){
+			if (mass[i] == (E)object){
+				System.arraycopy(mass, i+1, mass, i, index-i-1);
+				mass[index-1]=null;
+				index--;
+			    return true;				
+			}
+		} 
+		return false;		
+	}
+	
 	public void growArray(){
 		E[] newArray = (E[]) new Object[mass.length * 2];
 		System.arraycopy(mass, 0, newArray, 0, index );
@@ -120,11 +136,7 @@ public class ArrayListNew<E> implements List<E> {
 		return null;
 	}
 
-	@Override
-	public boolean remove(Object o) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 
 	@Override
 	public boolean containsAll(Collection<?> c) {
@@ -207,6 +219,11 @@ public class ArrayListNew<E> implements List<E> {
 	      }
 
 	      @Override
+		public void remove() {
+			Iterator.super.remove();
+		}
+
+		@Override
 	      public E next() {
 	      
 	         if(this.hasNext()){
