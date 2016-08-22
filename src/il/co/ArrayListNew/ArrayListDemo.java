@@ -51,22 +51,22 @@ public class ArrayListDemo {
 	      } 
 		System.out.println("-------------------------");
 //----------------------------------------------------------------------------------------
-		ArrayListNew<Integer> mass2 = new ArrayListNew<Integer>(5);
-		mass2.add(11);
-		mass2.add(22);
-		mass2.add(33);
-		mass2.add(44);
-		mass2.set(2, 333);
-		for(Iterator<Integer> iter = mass2.getIterator(); iter.hasNext();){
-	       // mass2.remove((Integer)22); 
-			Integer name = (Integer)iter.next();
+		ArrayListNew<Double> mass2 = new ArrayListNew<Double>(5);
+		mass2.add(11.0);
+		mass2.add(22.0);
+		mass2.add(33.0);
+		mass2.add(44.0);
+		mass2.set(2, 333.0);
+		for(Iterator<Double> iter = mass2.getIterator(); iter.hasNext();){
+	       //mass2.remove(22.0); 
+			Double name = (Double)iter.next();
 	         System.out.println("Name : " + name);
 	      } 
 		
 		System.out.println("-------------------------");
 		Iterator it = mass2.getIterator();
 		while (it.hasNext()){
-			mass2.remove((Integer)22);
+			mass2.remove(22.0);
 			System.out.println(it.next());
 		}
 		

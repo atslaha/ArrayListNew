@@ -74,8 +74,8 @@ public class ArrayListNew<E> implements List<E> {
 	@Override
 	public boolean remove(Object object) {
 		//object=(E)object;
-		for(int i=0;i<mass.length;i++){
-			if (mass[i] == (E)object){
+		for(int i=0;i<index;i++){
+			if (mass[i].equals((E)object)){
 				System.arraycopy(mass, i+1, mass, i, index-i-1);
 				mass[index-1]=null;
 				index--;
@@ -105,7 +105,44 @@ public class ArrayListNew<E> implements List<E> {
 		 return new NameIterator();
 	}
 	
-		
+// TODO
+//	public int hashCode(){
+//		int code = 0;
+//		Iterator<E> it = iterator();
+//		while(it.hasNext()){
+//			E e = it.next();
+//			if (e != null){
+//				code = 7*e.hashCode();
+//			}
+//		}
+//		return code;
+//	}	
+	
+	public boolean equals (Object o){
+		if(this.getClass().equals(o.getClass())){
+			ArrayListNew<E> that = (ArrayListNew<E>)o;
+			if (this.index != that.index){
+				return false;
+			} else {
+				for (int i=0;i<index;i++){
+					if(mass[i]==null){
+						if(that.mass[i]==null){
+							continue;
+						} else {
+							return false;
+						}
+					} else {
+						if(!mass[i].equals(that.mass[i])){
+							return false;
+						}
+					}
+				}
+			}			
+		}
+		return false;
+	}
+	
+	
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
@@ -220,7 +257,7 @@ public class ArrayListNew<E> implements List<E> {
 
 	      @Override
 		public void remove() {
-			Iterator.super.remove();
+	    	  Iterator.super.remove();
 		}
 
 		@Override
@@ -233,17 +270,5 @@ public class ArrayListNew<E> implements List<E> {
 	      }		
 	   }
 
-//	@Override
-//	public Iterator<E> getIterator() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-
-
-//	@Override
-//	public E remove(int index) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
 
 }
