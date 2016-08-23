@@ -14,7 +14,7 @@ public class InitializationException extends RuntimeException {
 		System.out.println(noumberOfExeption);
 	}
 	
-//	public void InitializationExeption(){
-//    	System.out.println("Capacity <0, Enter capacity >0;");	
-//    }         
+	public void InitializationExeption(){
+    	System.out.println("Capacity <0, Enter capacity >0;");	
+    }         
 }

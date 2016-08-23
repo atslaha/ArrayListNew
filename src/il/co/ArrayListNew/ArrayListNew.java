@@ -85,6 +85,14 @@ public class ArrayListNew<E> implements List<E> {
 		return false;		
 	}
 	
+	@Override
+	public void clear() {
+		E[] mass1 = (E[]) new Object[10];
+		mass = mass1;
+		index=0;
+		
+	}
+	
 	public void growArray(){
 		E[] newArray = (E[]) new Object[mass.length * 2];
 		System.arraycopy(mass, 0, newArray, 0, index );
@@ -205,11 +213,7 @@ public class ArrayListNew<E> implements List<E> {
 		return false;
 	}
 
-	@Override
-	public void clear() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 	@Override
 	public int indexOf(Object o) {
